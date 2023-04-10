@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.select-disable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #0C0C0C;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #FDFF87;
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body {
+    scrollbar-width: thin;
+    font-family: 'Mulish', sans-serif;
+    background-color: #fcfcfc;
+    overflow-x: hidden;
+}
+
+#dashboard-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 15%;
+    height: 100vh;
+    color: #FFf;
+    background: radial-gradient(57.36% 57.36% at 50% 42.64%, #151515 0%, #0C0C0C 100%);
+    border-right: 2px solid #F8D16F;
+    gap: 2vh;
+    padding: 0.6rem;
+    top: 0;
+    left: 0;
+}
+
+nav img {
+    max-width: 13vw;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 55vh;
+    gap: 7vh;
+    padding-left: 1vw;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    text-decoration: none;
+    gap: 1.4vw;
+}
+
+a:hover {
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li span {
+    font-size: 1.1vw;
+}
+
+.icon-nav {
+    max-width: 1.5vw !important;
+}
+
+nav button {
+    width: 6vw;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    color: #FF0000;
+    font-weight: 700;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px solid #FF0000;
+    padding: 0.3rem;
+    transition: 0.5s ease;
+}
+
+nav button:hover {
+    color: #000;
+    background-color: #FF0000;
+    -webkit-transform: scale(1.08);
+    -moz-transform: scale(1.08);
+    -o-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+.div-title {
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: center;
+    width: 85.2vw;
+    height: 12vh;
+    background: linear-gradient(to bottom, #DCDCDC, #FFF);
+    top: 0;
+    transition: 0.6s;
+    z-index: 3;
+}
+
+.div-title.ativa {
+    background-color: rgb(00, 00, 00, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(00, 00, 00, 0.37);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+}
+
+.div-title h1 {
+    align-self: center;
+    justify-self: center;
+    color: #000;
+    font-family: 'Munale';
+    font-size: 1.8vw;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+input {
+    width: 30vw;
+    height: 3vh;
+    border: 1px solid #151515;
+    border-radius: 15px;
+    background-image: url(../assets/img/icones/lupa.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 15px;
+    background-size: 15px;
+    text-align: right;
+    padding: 0.7rem;
+    margin: 0 2vw 0 2vw;
+}
+
+#content {
+    flex-direction: column;
+    width: 85%;
+    background-color: transparent;
+    gap: 3vh;
+    margin: 15% 0 0 15%;
+}
+
+#content span {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15vh;
+}
+
+.slide-show::-webkit-scrollbar-track {
+    background-color: #0C0C0C;
+}
+
+.slide-show::-webkit-scrollbar-thumb {
+    background-color: #FDFF87;
+    border-radius: 15px;
+}
+
+.slide-show::-webkit-scrollbar {
+    height: 5px;
+}
+
+.slide-show {
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.slide-show h2 {
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 0 10px 1.3vw;
+    margin: 2vh 0 3vh 0;
+}
+
+.slides-list {
+    list-style-type: none;
+    margin: 10px 0;
+    gap: 3vw;
+    padding: 0;
+    
+    /* 
+      deixa todos os itens da lista
+      na horizontal e todos com a
+      mesma largura
+    */
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+}
+
+canvas {
+    height: auto;
+    width: 40vw;
+    padding: 10px 1vw 10px 3vw;
+}

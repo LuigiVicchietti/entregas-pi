@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3185/3185082.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <title>Dashboard - ChartJS</title>
+</head>
+
+<body>
+    <div id="dashboard-container">
+        <nav class="select-disable" id="nav">
+            <img src="./assets/img/logotipo/branco.png" alt="Logo Cocoa Technology">
+            <ul class="nav-list">
+                <li><a href="#"><img class="icon-nav" src="./assets/img/icones/global.png"
+                            alt="Geral"><span>Geral</span></a></li>
+                <li><a href="#"><img class="icon-nav" src="./assets/img/icones/umidade.png" alt="Umidade">
+                        <span>Umidade</span></a>
+                </li>
+                <li><a href="#"><img class="icon-nav" src="./assets/img/icones/temperatura.png"
+                            alt="Temperatura"><span>Temperatura</span></a>
+                </li>
+            </ul>
+            <a href="#"><button>SAIR</button></a>
+        </nav>
+        <div id="content">
+            <div class="div-title" id="div-title">
+                <h1 class="select-disable">Dashboard - Geral</h1>
+            </div>
+            <span><input type="text" placeholder="Pesquisar"></span>
+            <div class="slide-show select-disable">
+                <h2>Plantação - Rua Haddock Lobo</h2>
+                <ul class="slides-list">
+                    <li class="slide">
+                        <canvas id="myChart1"></canvas>
+                    </li>
+                    <li class="slide">
+                        <canvas id="myChart2"></canvas>
+                    </li>
+                    <li class="slide">
+                        <canvas id="myChart3"></canvas>
+                    </li>
+                    <li class="slide">
+                        <canvas id="myChart4"></canvas>
+                    </li>
+                </ul>
+            </div>
+            <div class="slide-show select-disable">
+                <h2>Plantação - Rua Serra das Araras</h2>
+                <ul class="slides-list">
+                    <li class="slide">
+                        <canvas id="myChart5"></canvas>
+                    </li>
+                    <li class="slide">
+                        <canvas id="myChart6"></canvas>
+                    </li>
+                    <li class="slide">
+                        <canvas id="myChart7"></canvas>
+                    </li>
+                    <li class="slide">
+                        <canvas id="myChart8"></canvas>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx1 = document.getElementById('myChart1');
+    const ctx2 = document.getElementById('myChart2');
+    const ctx3 = document.getElementById('myChart3');
+    const ctx4 = document.getElementById('myChart4');
+    const ctx5 = document.getElementById('myChart5');
+    const ctx6 = document.getElementById('myChart6');
+    const ctx7 = document.getElementById('myChart7');
+    const ctx8 = document.getElementById('myChart8');
+
+    //Gráfico 1 - Plantação 1
+    new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Umidade da plantação dentre o período do meio dia ás duas e meia da tarde',
+                backgroundColor: 'blue',
+                borderColor: 'blue',
+                data: [80, 82, 80, 85, 80, 83],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    //Gráfico 2 - Plantação 1
+    new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Temperatura da plantação dentre o período do meio dia ás cinco da tarde',
+                backgroundColor: 'crimson',
+                borderColor: 'crimson',
+                data: [30, 29, 28, 25, 22, 23],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    //Gráfico 3 - Plantação 1
+    new Chart(ctx3, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'crimson',
+                borderColor: 'crimson',
+                data: [30, 29, 28, 25, 22, 23],
+                borderWidth: 1
+            },
+            {
+                label: 'Umidade',
+                backgroundColor: 'blue',
+                borderColor: 'blue',
+                data: [80, 82, 80, 85, 80, 83],
+                borderWidth: 1
+            }
+            ],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    //Gráfico 4 - Plantação 1
+    new Chart(ctx4, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+                label: 'Temperatura média',
+                backgroundColor: 'crimson',
+                borderColor: 'crimson',
+                data: [22, 24, 27, 23, 20, 18],
+                borderWidth: 1
+            },
+            {
+                label: 'Umidade média',
+                backgroundColor: 'blue',
+                borderColor: 'blue',
+                data: [90, 89, 93, 87, 88, 82],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    //Gráfico 1 - Plantação 2
+    new Chart(ctx5, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Umidade da plantação dentre o período do meio dia ás cinco da tarde',
+                backgroundColor: 'blue',
+                borderColor: 'blue',
+                data: [80, 82, 80, 85, 80, 83],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    //Gráfico 2 - Plantação 2
+    new Chart(ctx6, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Temperatura da plantação dentre o período do meio dia ás duas e meia da tarde',
+                backgroundColor: 'crimson',
+                borderColor: 'crimson',
+                data: [30, 29, 28, 25, 22, 23],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    //Gráfico 3 - Plantação 2
+    new Chart(ctx7, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Temperatura',
+                backgroundColor: 'crimson',
+                borderColor: 'crimson',
+                data: [30, 29, 28, 25, 22, 23],
+                borderWidth: 1
+            },
+            {
+                label: 'Umidade',
+                backgroundColor: 'blue',
+                borderColor: 'blue',
+                data: [80, 82, 80, 85, 80, 83],
+                borderWidth: 1
+            }
+            ],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    //Gráfico 4 - Plantação 2
+    new Chart(ctx8, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+                label: 'Temperatura média',
+                backgroundColor: 'crimson',
+                borderColor: 'crimson',
+                data: [22, 24, 27, 23, 20, 18],
+                borderWidth: 1
+            },
+            {
+                label: 'Umidade média',
+                backgroundColor: 'blue',
+                borderColor: 'blue',
+                data: [90, 89, 93, 87, 88, 82],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
